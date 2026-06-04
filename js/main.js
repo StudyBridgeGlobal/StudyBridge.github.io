@@ -115,25 +115,6 @@ document.addEventListener('click', e => {
 });
 
 // ── Form Submissions ─────────────────────────
-function handleFormSubmit(formId, successId) {
-  const form = document.getElementById(formId);
-  if (!form) return;
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const successMsg = document.getElementById(successId);
-    if (successMsg) {
-      successMsg.classList.add('show');
-      form.reset();
-      document.querySelectorAll('.subject-badge').forEach(b => b.classList.remove('selected'));
-      setTimeout(() => successMsg.classList.remove('show'), 6000);
-    }
-  });
-}
-
-handleFormSubmit('helpForm', 'helpSuccess');
-handleFormSubmit('volunteerForm', 'volunteerSuccess');
-handleFormSubmit('contactForm', 'contactSuccess');
-handleFormSubmit('eventForm', 'eventSuccess');
 
 // ── Accordion ────────────────────────────────
 document.addEventListener('click', e => {
